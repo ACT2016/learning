@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+<title>Welcome to learning portal Registration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="portal.css">
+<script src="myscripts.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+           <div id="navbar" class="navbar-collapse collapse">
+          <a class="navbar-brand" href="#">Learning Portal</a>
+        </div>
+      </div>
+</nav>
+
+<div class="jumbotron"></div>
+
+<div class="container">
+      
+      <div class="row">
+        <div class="col-md-12 col-xs-12">
+          <h2>Registeration page</h2>
+          <p>If you are not a user please Sign Up</p>
+          
+          <form class="navbar-form navbar-left">
+          <div class="form-group">
+             <p> <input type="text" placeholder="Name" class="form-control" id="fname" required>
+            </div>
+            </p>
+            <div class="form-group">
+             <p> <input type="text" placeholder="LastName" class="form-control" id="lname" required></p>
+            </div>
+            </p>
+			<div class="form-group">
+             <p> <input type="email" placeholder="Email" class="form-control" id="email" required></p>
+            </div>
+			</p>
+            <div class="form-group">
+             <p> <input type="text" placeholder="Career Level" class="form-control" id="cLevel" required></p>
+            </div>
+            </p>
+            <div class="form-group">
+             <p> <input type="password" placeholder="Password" class="form-control" id="password"></p>
+            </div>
+            </p>
+            <div class="form-group">
+             <p> <input type="password" placeholder="Confirm Password" class="form-control" id="rePassword"></p>
+            </div>
+            </p>
+            <p><button type="submit" class="btn btn-success" onclick="validateRegister()">Sign Up</button></p>
+          </form>
+        </div>
+        
+        
+      <hr>
+
+      
+    
+</body>
+<footer>
+        <p>&copy; 2016 TMUS</p>
+      </footer>
+</html>
