@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -11,8 +12,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
   <link href="./tableGenerator.css" rel="stylesheet" type="text/css"></script>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> 
-<script src="./	jquery.accordion-live-filter.js"></script>
+<script src="./jquery.accordion-live-filter.js"></script>
 <script src="./home.js"></script>
+    
 </head>
 
 <body onload="pop()";>
@@ -20,23 +22,23 @@
     <div class="container">
         <div class="navbar-header">
             <div id="navbar" class="navbar-collapse collapse">
-                <a class="navbar-brand" href="home.html">Learning Portal</a>
+                <a class="navbar-brand" href="./home.html">Learning Portal</a>
             </div>
          </div>
     </div>
 <div class="container">
                 <ul class = "nav navbar-nav">
-                    <li><a href = "welccome.html">HOME</a></li>
+                    <li><a href = "homeTab.html">HOME</a></li>
                     <li class = "dropdown"><a href = "myTrainings.html" class = "dropdown-toggle" data-toggle = "dropdown">My Trainings</a>
                         <ul class = "dropdown-menu">
                             <li><a href = "#">Pending Trainings</a></li>
-                            <li class = "divider"></li>	
+                            <li class = "divider"></li>
                             <li><a href = "#">Completed Trainings</a></li>
                         </ul>
                     </li>
                     <li class = "dropdown"><a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">My Profile</a>
                         <ul class = "dropdown-menu">
-                            <li><a href = "home.html">Logout</a></li>
+                            <li><a href = "#" onClick ="logout()">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -50,39 +52,8 @@
         </div>
      <div id="div1" class="container">
  <table id="table1" class="CSSTableGenerator"></table>
- <input class="filter" data-alf="#menu" placeholder="Filter Trainings">
- <ul id="menu" class="filterable">
-  <li>
-    <label>Apigee Trainings</label>
-    <ul>
-      <li><a href="#">Introduction to Apigee</a>  </li>
-      <li><a href="#">BaaS Fundamentals </a></li>
-      <li><a href="#">Caching in Apigee</a></li>
-      <li><a href="#">Mashups & Filtering of Apis</a></li>
-      <li><a href="#">Advanced Mashups</a></li>
-      <li><a href="#">FAQ</a></li>
-    </ul>
-  </li>
-  <li>
-    <label>Splunk Trainings</label>
-    <ul>
-      <li>Introduction of Splunk</li>
-      <li>Reports in Splunk</li>
-      <li>DashBoards in Splunk</li>
-      <li>Data Modeling in Splunk</li>
-      <li>Searhing in Splunk</li>
-    </ul>
-  </li>
-  <li>
-    <label>Java Trainings</label>
-    <ul>
-      <li>Angular Trainings</li>
-    </ul>
-  </li>
-</ul>
 </div>
-<script>$('.filter').accordionLiveFilter();
-</script>
+
 </body>
 <hr>
     <footer>

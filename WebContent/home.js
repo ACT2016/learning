@@ -11,7 +11,7 @@ $.get("./rest/user?username="+email+"&password="+password, function(result){
 	if(email=='admin')
 		window.location.href="./report.html";
 	else		
-	window.location.href="./myTrainings.html";
+	window.location.href="./homeTab.html";
 });
 
 
@@ -51,12 +51,19 @@ $.ajax({
 	});*/
 }
 
+/*function logout(){
+	$.get(".rest/user/logout",
+	function (data){
+	window.location.href="./homeTab.html";
+	})
+}*/
+
 function pop(obj){
 		
 		$.getJSON("./rest/training/auth",
 				function (data) {
 				    var tr;
-				    /*tr = $('<tr/>');
+				    tr = $('<tr/>');
 			        tr.append("<td><B>Training Name</B></td>");
 			        tr.append("<td><b>Description</b></td>");
 			        tr.append("<td><b>Status</b> </td>");
@@ -72,13 +79,13 @@ function pop(obj){
 					        tr.append("<td><a href='www.splunk.com'>" + this.trainingName +  ":"+this.categoryName+"</a></td>");
 					        tr.append("<td>" + this.trainingDesc + "</td>");
 							if(this.trainingStatus == "C"){
-					        tr.append("<td bgcolor='#00FF00'>" + 'Complete' + "</td>");
+					        tr.append("<td>" + 'Complete' + "</td>");
 							} else 
-								tr.append("<td bgcolor='#FF0000'>" + 'Pending' + "</td>");
-					        tr.append("<td><a href='www.splunk.com'>Assessment</a></td>");
+								tr.append("<td>" + 'Pending' + "</td>");
+					        tr.append("<td><a href='www.splunk.com' value='www.splunk.com'>Assessment</a></td>");
 						       
 					        $('#table1').append(tr);
-			        })*/
+			        })
 				});
 
 }
@@ -100,7 +107,7 @@ function pop2(obj){
 			        tr.append("<td>" + data[i].trainingName + "</td>");
 			        tr.append("<td>" + data[i].trainingDesc + "</td>");
 			        tr.append("<td>" + 'Pending' + "</td>");
-			        tr.append("<td><a href='www.splunk.com'>Assessment</a></td>");
+			        tr.append("<td><a href='http://www.splunk.com'>Assessment</a></td>");
 				       
 			        $('#table1').append(tr);
 			    }
@@ -113,5 +120,9 @@ function pop2(obj){
 				   //data goes here
 				});
 
+	}
+	
+	function trainingWindow(){
+		window.open("www.splunk.com");
 	}
 }
