@@ -1,0 +1,22 @@
+body{
+    font-family: "Agency FB";
+}
+
+h1{
+    font-family: "Agency FB";
+    font-size:small;
+    text-align: center;
+}
+
+
+h2{
+    font-family: "Agency FB";
+    font-size:large;
+
+}
+@media(max-device-width: 480px) {
+    h1{
+        font-family: "Agency FB";
+        font-size: large;
+    }
+}
