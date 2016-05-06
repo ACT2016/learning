@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class User {
 	private int id;
 
-    private String firstName;
+    private String firstName="";
 
     private String lastName;
 

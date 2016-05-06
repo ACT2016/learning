@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Employee {
 
-    private int id;
+    private int id =0;
 
     private String firstName;
 
