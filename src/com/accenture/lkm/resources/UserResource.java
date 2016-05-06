@@ -41,4 +41,12 @@ public class UserResource {
 		}
 		return user ;
 	}
+	
+	@POST @Path("/logout")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public Boolean logout() {
+			request.getSession().invalidate(); 
+		return Boolean.TRUE;
+	
+	}
 }
