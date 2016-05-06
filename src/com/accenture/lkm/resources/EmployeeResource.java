@@ -28,7 +28,7 @@ public class EmployeeResource {
 		return dao.findById(Integer.parseInt(id));
 	}
 	
-	@GET @Path("{id}/reports")
+	@GET	@Path("{id}/reports")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public List<Employee> findByManager(@PathParam("id") String managerId) {
 		return dao.findByManager(Integer.parseInt(managerId));

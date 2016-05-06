@@ -21,8 +21,7 @@ public class TrainingResource {
 	TrainingDAO trainingDAO = new TrainingDAO();
 
 	
-	@GET@Path("/auth/")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	@GET@Path("/auth/") @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public List<Training> findById(@QueryParam("username") String username,@QueryParam("password") String password) {
 		
 		User user= (User)request.getSession().getAttribute("user");
