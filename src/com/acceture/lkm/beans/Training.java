@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 public class Training {
 
-	private int trainingId = 1;
+	private int trainingId = 0;
 	private String trainingName= "";
 	private String trainingDesc = "";
 	private int categoryId;
