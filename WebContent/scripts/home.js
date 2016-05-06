@@ -3,15 +3,15 @@ function Login()
 var email= document.getElementById("email").value;
 var password =document.getElementById("password").value;
 console.log(window.location.href);
-$.get("../rest/user?username="+email+"&password="+password, function(result){
+$.get("rest/user?username="+email+"&password="+password, function(result){
 	if(result.id==0){
 		$('#loginMsg').html("Invalid Username or Password. Please try again");
 		return;
 	}
 	if(email=='admin')
-		window.location.href="./report.html";
+		window.location.href="views/report.html";
 	else		
-	window.location.href="./homeTab.html";
+	window.location.href="views/homeTab.html";
 });
 
 
@@ -60,7 +60,7 @@ $.ajax({
 
 function pop(obj){
 		
-		$.getJSON("../rest/training/auth",
+		$.getJSON("rest/training/auth",
 				function (data) {
 				    var tr;
 				    tr = $('<tr/>');
@@ -91,7 +91,7 @@ function pop(obj){
 }
 
 function pop2(obj){	
-	$.getJSON("../status.json",
+	$.getJSON("jsons/status.json",
 			function (data) {
 			    var tr;
 			    tr = $('<tr/>');
