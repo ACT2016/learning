@@ -43,10 +43,10 @@ public class UserResource {
 	}
 	
 	@POST @Path("/logout")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public Boolean logout() {
+	@Produces({ MediaType.TEXT_HTML, MediaType.TEXT_XML })
+	public String logout() {
 			request.getSession().invalidate(); 
-		return Boolean.TRUE;
+		return "true";
 	
 	}
 }
