@@ -1,3 +1,21 @@
+/*$(document).ready(function(){
+     Get iframe src attribute value i.e. YouTube video url
+    and store it in a variable 
+    var url = $("#cartoonVideo").attr('src');
+    
+     Assign empty url value to the iframe src attribute when
+    modal hide, which stop the video playing 
+    $("#myModal").on('hide.bs.modal', function(){
+        $("#cartoonVideo").attr('src', '');
+    });
+    
+     Assign the initially stored url back to the iframe src
+    attribute when modal is displayed again 
+    $("#myModal").on('show.bs.modal', function(){
+        $("#cartoonVideo").attr('src', url);
+    });
+});*/
+
 function Login()
 {
 var email= document.getElementById("email").value;
@@ -54,7 +72,7 @@ $.ajax({
 function logout(){
 	$.post("../rest/user/logout",
 	function (data){
-	window.location.href="../	views/home.html";
+	window.location.href="../views/home.html";
 	})
 }
 
@@ -67,7 +85,7 @@ function pop(obj){
 			        tr.append("<td><B>Training Name</B></td>");
 			        tr.append("<td><b>Description</b></td>");
 			        tr.append("<td><b>Status</b> </td>");
-			        tr.append("<td><b>Assessment</b> </td>");
+			       /* tr.append("<td><b>Assessment</b> </td>");*/
 			        $('#table1').append(tr);
 			        //data = $.parseJSON(data);
 			        data.training .sort(function(a, b){
@@ -82,7 +100,7 @@ function pop(obj){
 					        tr.append("<td>" + 'Complete' + "</td>");
 							} else 
 								tr.append("<td>" + 'Pending' + "</td>");
-					        tr.append("<td><a href='www.splunk.com' value='www.splunk.com'>Assessment</a></td>");
+					        /*tr.append("<td><a href='www.splunk.com' value='www.splunk.com'>Assessment</a></td>");*/
 						       
 					        $('#table1').append(tr);
 			        })
@@ -112,8 +130,25 @@ function pop2(obj){
 			        $('#table1').append(tr);
 			    }
 			});
-
-
+}
+	function validateRegister(){
+		var email= document.getElementById("fname").value;
+		var password =document.getElementById("lname").value;
+		var email= document.getElementById("email").value;
+		var password =document.getElementById("clevel").value;
+		var email= document.getElementById("sname").value;
+		var password =document.getElementById("password").value;
+		$.get("../rest/registeruser?fname="+fname+"lname="+lname+"username="+email+"clevel="+clevel+"sname="+sname+"&password="+password+"&", function(result){
+			if(result.id==0){
+				$('#loginMsg').html("User already exist. Please try again");
+				return;
+			}
+				
+			window.location.href="../views/home.html";
+		});
+	}
+	
+	
 	function status(){	
 		$.getJSON("../jsons/trainingStatus.json",
 				function (data) {
@@ -125,4 +160,10 @@ function pop2(obj){
 	function trainingWindow(){
 		window.open("www.splunk.com");
 	}
-}
+	
+	function exitButton(){
+		
+		if (window.confirm("Do you really want to leave?")) { 
+			  window.open("registerTab.html", "Thanks for Visiting!");
+			}
+	}

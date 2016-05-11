@@ -13,10 +13,11 @@
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="../scripts/home.js"></script>
-    <link rel="stylesheet" href="../styles/style.css">
+<link rel="shortcut icon" href="">
+    <!-- <link rel="stylesheet" href="../styles/style.css"> -->
 </head>
 
-<body onload="pop()">
+<body onload="pop()";>
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
@@ -28,17 +29,11 @@
     <div class="container">
         <ul class = "nav navbar-nav">
             <li><a href = "homeTab.html">HOME</a></li>
-            <li class = "dropdown"><a href = "myTrainings.html" class = "dropdown-toggle" data-toggle = "dropdown">My Trainings</a>
-                <ul class = "dropdown-menu">
-                    <li><a href = "#">Pending Trainings</a></li>
-                    <li class = "divider"></li>
-                    <li><a href = "#">Completed Trainings</a></li>
-                </ul>
-            </li>
+            <li><a href="myTrainings.html">My Trainings</a></li>
             <li class = "dropdown"><a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">My Profile</a>
                 <ul class = "dropdown-menu">
-                	<li><a href="profile.html">My Profile</a></li>
-                    <li><a href = "logout()">Logout</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+                    <li><a href = "#">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -48,7 +43,7 @@
 <div class="container">
     <div class="row">
         <div class="jumbotron">
-            <div class="container justified"><h2>Welcome Cheshta</h2></div>
+            <div class="container justified"><h2>Hi There!</h2></div>
         </div>
     </div>
 
@@ -79,13 +74,13 @@
 This self-paced course gives users an overview of the Splunk Enterprise infrastructure. Users get a high-level look at how to grow a Splunk deployment from a single instance to a distributed environment.
 With tips and best practices for deploying, extending and integrating Splunk while showing the user what is happening behind the scenes.
                                <div class="pull-right " >
-                                   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" width="50%" height="20%">
+                                   <button type="button" class="btn btn-primary btn-lg" onClick="location.href='registerTab.html'">
                                    Register
                                 </button>
                                 </div>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -107,14 +102,15 @@ With tips and best practices for deploying, extending and integrating Splunk whi
 
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal" href="#" onClick="window.open('http://www.splunk.com');">Start</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal" href="#" onClick="window.open('../views/registerTab');">Start</button>
                                                 <button type="button" class="btn btn-primary">Mark for later</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
+                        
                         <!-- Second Panel -->
                         <div class="panel panel-default">
                             <div class="panel-heading">

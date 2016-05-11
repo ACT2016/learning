@@ -20,11 +20,11 @@ h2{
         font-size: large;
     }
 }
-
-#loginMsg{
-
-    font-family: "Agency FB";
-    font-size:small;
-    color:red;
-    text-align: right;
+/* .bs-example {
+	margin: 20px;
 }
+
+.modal-content iframe {
+	margin: 0 auto;
+	display: block;
+} */
