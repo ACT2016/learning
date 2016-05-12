@@ -54,11 +54,13 @@ public class UserResource {
 	@POST
 	@Path("/register")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public User validateUser(@QueryParam("fname") String fname,@QueryParam("lname") String lname,@QueryParam("email") String email,@QueryParam("clevel") String enterpriseId,@QueryParam("sname") String sname,@QueryParam("password") String password) {
+	public User validateUser(@QueryParam("fname") String fname,@QueryParam("lname") String lname,@QueryParam("email") String email,@QueryParam("eId") String enterpriseId,@QueryParam("sname") String sname,@QueryParam("password") String password) {
 		User user = new User();
 		user.setFirstName(fname);
 		user.setLastName(lname);
+		user.setUserName(email);
 		user.setEnterpriseId(enterpriseId);
+		user.setPassword(password);
 		return dao.insertByUser	(user);
 		
 	}

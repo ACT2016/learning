@@ -135,10 +135,10 @@ function pop2(obj){
 		var fname= document.getElementById("fname").value;
 		var lname= document.getElementById("lname").value;
 		var email= document.getElementById("email").value;
-		var clevel= document.getElementById("cLevel").value;
+		var eId = document.getElementById("eId").value;
 		var sname= document.getElementById("sname").value;
 		var password= document.getElementById("password").value;
-		$.get("../rest/user/register?fname="+fname+"&lname="+lname+"&email="+email+"&clevel="+clevel+"&sname="+sname+"&password="+password, function(result){
+		$.post("../rest/user/register?fname="+fname+"&lname="+lname+"&email="+email+"&eId="+eId+"&sname="+sname+"&password="+password, function(result){
 			if(result.id==0){
 				$('#loginMsg').html("User already exist. Please try again");
 				return;

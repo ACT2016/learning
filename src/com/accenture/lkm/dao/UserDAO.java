@@ -38,7 +38,7 @@ public class UserDAO {
 
 	public User insertByUser(User user) {
     	Connection c = null;
-    	String sql = "INSERT INTO `directory`.`users`(`userId`,`firstName`,`lastName`,`userName`,`password`,`roleId`,`enterpriseId`) values("+user.getFirstName()+","+user.getFirstName()+",2,"+user.getFirstName()+")";
+    	String sql = "INSERT INTO `directory`.`users`(`userId`,`firstName`,`lastName`,`userName`,`password`,`roleId`,`enterpriseId`) values("+user.getId()+","+user.getFirstName()+","+user.getLastName()+","+user.getUserName()+","+user.getPassword()+",2,"+user.getEnterpriseId()+")";
         try {
             c = ConnectionHelper.getConnection();
             
@@ -48,7 +48,10 @@ public class UserDAO {
             }
             
             ps= c.prepareStatement("select max(userId)+1 from users");
-            user.setId(ps.executeQuery().getInt(1));
+            ResultSet resultSet = ps.executeQuery();
+			while (resultSet.next()) {
+				user.setId(resultSet.getInt(1));
+			}
 			ps = c.prepareStatement(sql);
             int rs = ps.executeUpdate();
             
