@@ -12,24 +12,29 @@ public class RegisterUserDAO {
 
     
     
-    public RegisterUser findByUserName(String name, String password) {
+    public RegisterUser insertByUser(String fname, String lname, String email, String clevel, String sname, String password) {
     	RegisterUser user = new RegisterUser();
         Connection c = null;
     	String sql = "INSERT INTO registeruser(firstname,lastname,email,careerlevel,supname,password) values(firstname,lastname,email,clevel,supname,password);";
         try {
             c = ConnectionHelper.getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                user=processSummaryRow(rs);
+            int rs = ps.executeUpdate();
+            
+            if (rs > 0) {
+                System.out.println("A row was inserted.");
+                return user;
             }
+            else
+            	return null;
+           
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
 		} finally {
 			ConnectionHelper.close(c);
 		}
-        return user;
+        //return user;
     }
     
     
@@ -39,7 +44,9 @@ public class RegisterUserDAO {
         
         user.setFirstName(rs.getString("firstName"));
     	user.setLastName(rs.getString("lastName"));
-    	user.setUserName(rs.getString("userName"));
+    	user.setEmail(rs.getString("email"));
+    	user.setcLevel(rs.getInt("cLevel"));
+    	user.setsName(rs.getString("sName"));
     	user.setPassword(rs.getString("password"));
         
         return user;
@@ -48,10 +55,12 @@ public class RegisterUserDAO {
     protected RegisterUser processSummaryRow(ResultSet rs) throws SQLException {
     	RegisterUser user = new RegisterUser();
     	
-    	user.setFirstName(rs.getString("firstName"));
-    	user.setLastName(rs.getString("lastName"));
-    	user.setUserName(rs.getString("userName"));
-    	user.setPassword(rs.getString("password"));
+    	 user.setFirstName(rs.getString("firstName"));
+     	user.setLastName(rs.getString("lastName"));
+     	user.setEmail(rs.getString("email"));
+     	user.setcLevel(rs.getInt("cLevel"));
+     	user.setsName(rs.getString("sName"));
+     	user.setPassword(rs.getString("password"));
         
     	return user;
     }

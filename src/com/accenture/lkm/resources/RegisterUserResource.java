@@ -21,20 +21,20 @@ public class RegisterUserResource {
 	
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public RegisterUser findById(@QueryParam("username") String username,@QueryParam("password") String password) {
-		return this.authenticate(username, password);
+	public RegisterUser validateUser(@QueryParam("fname") String fname,@QueryParam("lname") String lname,@QueryParam("email") String email,@QueryParam("clevel") String clevel,@QueryParam("sname") String sname,@QueryParam("password") String password) {
+		return this.insertRecord(fname,lname,email,clevel,sname, password);
 		
 	}
 	
 	@POST
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public RegisterUser findByIdPost(@QueryParam("username") String username,@QueryParam("password") String password) {
-		 return this.authenticate(username, password);
+	public RegisterUser validateUserPost(@QueryParam("fname") String fname,@QueryParam("lname") String lname,@QueryParam("email") String email,@QueryParam("clevel") String clevel,@QueryParam("sname") String sname,@QueryParam("password") String password) {
+		 return this.insertRecord(fname,lname,email,clevel,sname, password);
 	
 	}
 	
-	private RegisterUser authenticate(String username, String password){
-		RegisterUser user= dao.findByUserName(username,password);
+	private RegisterUser insertRecord(String fname, String lname, String email, String clevel, String sname, String password){
+		RegisterUser user= dao.insertByUser(fname,lname,email,clevel,sname, password);
 		
 		return user ;
 	}

@@ -132,13 +132,13 @@ function pop2(obj){
 			});
 }
 	function validateRegister(){
-		var email= document.getElementById("fname").value;
-		var password =document.getElementById("lname").value;
+		var fname= document.getElementById("fname").value;
+		var lname= document.getElementById("lname").value;
 		var email= document.getElementById("email").value;
-		var password =document.getElementById("clevel").value;
-		var email= document.getElementById("sname").value;
-		var password =document.getElementById("password").value;
-		$.get("../rest/registeruser?fname="+fname+"lname="+lname+"username="+email+"clevel="+clevel+"sname="+sname+"&password="+password+"&", function(result){
+		var clevel= document.getElementById("cLevel").value;
+		var sname= document.getElementById("sname").value;
+		var password= document.getElementById("password").value;
+		$.get("../rest/registeruser?fname="+fname+"lname="+lname+"username="+email+"clevel="+clevel+"sname="+sname+"&password="+password, function(result){
 			if(result.id==0){
 				$('#loginMsg').html("User already exist. Please try again");
 				return;
