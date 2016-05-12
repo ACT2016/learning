@@ -15,7 +15,7 @@ public class RegisterUserDAO {
     public RegisterUser insertByUser(String fname, String lname, String email, String clevel, String sname, String password) {
     	RegisterUser user = new RegisterUser();
         Connection c = null;
-    	String sql = "INSERT INTO registeruser(firstname,lastname,email,careerlevel,supname,password) values(firstname,lastname,email,clevel,supname,password);";
+    	String sql = "INSERT INTO registeruser(firstname,lastname,email,careerlevel,supname,password) values("+fname+","+lname+","+email+","+clevel+","+sname+","+password+")";
         try {
             c = ConnectionHelper.getConnection();
             PreparedStatement ps = c.prepareStatement(sql);

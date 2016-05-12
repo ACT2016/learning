@@ -10,6 +10,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 import com.accenture.lkm.dao.UserDAO;
+import com.acceture.lkm.beans.RegisterUser;
 import com.acceture.lkm.beans.User;
 
 @Path("/user")
@@ -38,7 +39,7 @@ public class UserResource {
 		if(user.getId()!=0){
 			
 			request.getSession(true).setAttribute("user",user);
-		}
+		}	
 		return user ;
 	}
 	
@@ -49,4 +50,17 @@ public class UserResource {
 		return "true";
 	
 	}
+	
+	@POST
+	@Path("/register")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public User validateUser(@QueryParam("fname") String fname,@QueryParam("lname") String lname,@QueryParam("email") String email,@QueryParam("clevel") String enterpriseId,@QueryParam("sname") String sname,@QueryParam("password") String password) {
+		User user = new User();
+		user.setFirstName(fname);
+		user.setLastName(lname);
+		user.setEnterpriseId(enterpriseId);
+		return dao.insertByUser	(user);
+		
+	}
+	
 }

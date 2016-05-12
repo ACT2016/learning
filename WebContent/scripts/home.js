@@ -138,7 +138,7 @@ function pop2(obj){
 		var clevel= document.getElementById("cLevel").value;
 		var sname= document.getElementById("sname").value;
 		var password= document.getElementById("password").value;
-		$.get("../rest/registeruser?fname="+fname+"&lname="+lname+"&username="+email+"&clevel="+clevel+"&sname="+sname+"&password="+password, function(result){
+		$.get("../rest/user/register?fname="+fname+"&lname="+lname+"&email="+email+"&clevel="+clevel+"&sname="+sname+"&password="+password, function(result){
 			if(result.id==0){
 				$('#loginMsg').html("User already exist. Please try again");
 				return;
