@@ -77,7 +77,7 @@ function logout(){
 }
 
 function pop(obj){
-		
+	 
 		$.getJSON("../rest/training/auth",
 				function (data) {
 				    var tr;
