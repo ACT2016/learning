@@ -88,7 +88,7 @@ function pop(obj){
 			       /* tr.append("<td><b>Assessment</b> </td>");*/
 			        $('#table1').append(tr);
 			        //data = $.parseJSON(data);
-			        data.training .sort(function(a, b){
+			        data.training.sort(function(a, b){
 			        	return ((a['categoryName']  == b['categoryName']) ? 0 : ((a['categoryName']>    b['categoryName']) ? 1 : -1 ));
 
 			        });
@@ -143,7 +143,7 @@ function pop2(obj){
 				$('#loginMsg').html("User already exist. Please try again");
 				return;				
 			}
-			window.location.href="../views/home.html";
+			window.location.href="../views/register.html";
 			
 		});
 	}
@@ -161,9 +161,33 @@ function pop2(obj){
 		window.open("www.splunk.com");
 	}
 	
+	function homeTraining(){
+		var regTab = "registerTab.html";
+		$.getJSON("../rest/training/auth",
+				function (data) {
+			        
+			        data.training.sort(function(a, b){
+			        	return ((a['categoryName']  == b['categoryName']) ? 0 : ((a['categoryName']>    b['categoryName']) ? 1 : -1 ));
+
+			        });
+			        $(data.training ).each(function(i, obj) { 
+			        	 var div = $('<div/>');
+			        	 div.append("<div class='panel panel-default'> <div class='panel-heading'>  <h4 class='panel-title' data-toggle='collapse' data-target='#collapseOne_"+i+"' >"
+			        			 + this.trainingName
+								 + "</h4></div>"
+								 + " <div id='collapseOne_"+i+"' class='panel-collapse collapse'> <div class='panel-body'>"
+								 + this.trainingDesc
+								 + " <div class='pull-right '><button type='button' class='btn btn-primary btn-lg' onClick='location.href='"+regTab+"''> Register </button></div></div>");
+			        	 					       
+						       
+					        $('#accordion').append(div);
+			        })
+				});
+	}
+	
 	function exitButton(){
 		
-		if (window.confirm("Do you really want to leave?")) { 
+		if (window.confirm("Have you completed your training?")) { 
 			  window.open("registerTab.html", "Thanks for Visiting!");
 			}
 	}
