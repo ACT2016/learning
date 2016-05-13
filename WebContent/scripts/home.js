@@ -141,10 +141,10 @@ function pop2(obj){
 		$.post("../rest/user/register?fname="+fname+"&lname="+lname+"&email="+email+"&eId="+eId+"&sname="+sname+"&password="+password, function(result){
 			if(result.id==0){
 				$('#loginMsg').html("User already exist. Please try again");
-				return;
+				return;				
 			}
-				
 			window.location.href="../views/home.html";
+			
 		});
 	}
 	

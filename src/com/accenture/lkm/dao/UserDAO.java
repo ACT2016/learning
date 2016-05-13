@@ -38,7 +38,7 @@ public class UserDAO {
 
 	public User insertByUser(User user) {
     	Connection c = null;
-    	String sql = "INSERT INTO `directory`.`users`(`userId`,`firstName`,`lastName`,`userName`,`password`,`roleId`,`enterpriseId`) values("+user.getId()+","+user.getFirstName()+","+user.getLastName()+","+user.getUserName()+","+user.getPassword()+",2,"+user.getEnterpriseId()+")";
+    	String sql="";
         try {
             c = ConnectionHelper.getConnection();
             
@@ -52,7 +52,8 @@ public class UserDAO {
 			while (resultSet.next()) {
 				user.setId(resultSet.getInt(1));
 			}
-			ps = c.prepareStatement(sql);
+			sql = "INSERT INTO `directory`.`users`(`userId`,`firstName`,`lastName`,`userName`,`password`,`roleId`,`enterpriseId`) values('"+user.getId()+"','"+user.getFirstName()+"','"+user.getLastName()+"','"+user.getUserName()+"','"+user.getPassword()+"',2,'"+user.getEnterpriseId()+"')";
+			ps = c.prepareStatement(sql);		 	
             int rs = ps.executeUpdate();
             
             if (rs > 0) {
