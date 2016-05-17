@@ -177,7 +177,7 @@ function pop2(obj){
 								 + "</h4></div>"
 								 + " <div id='collapseOne_"+i+"' class='panel-collapse collapse'> <div class='panel-body'>"
 								 + this.trainingDesc
-								 + " <div class='pull-right '><button type='button' class='btn btn-primary btn-lg' onClick='location.href='"+regTab+"''> Register </button></div></div>");
+								 + " <div class='pull-right '><button type='button' class='btn btn-primary btn-lg' onClick='javascript:window.location.href=\"./registerTab.html\"'> Register </button></div></div>");
 			        	 					       
 						       
 					        $('#accordion').append(div);
